@@ -8,7 +8,9 @@
 
 ## Відео
 
-<div class="video-placeholder">🎬 Відео скоро з'явиться</div>
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/t6yTvfP7Ums" allowfullscreen></iframe>
+</div>
 
 ## Хід роботи
 
