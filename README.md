@@ -65,3 +65,14 @@
 python -m http.server 3000
 ```
 і відкрити `http://localhost:3000`.
+
+## Іконки інструментів
+
+У папці `icons/` лежать офіційні іконки FreeCAD (ліцензія LGPL). Щоб вставити іконку перед назвою інструмента, пишіть так:
+
+```html
+<img class="ic" src="icons/pad.svg" alt="" data-no-zoom>**Видавлювання**
+```
+
+Є такі іконки: `body`, `new-sketch`, `leave-sketch`, `rect`, `rect-center`, `circle`, `external`, `dimension`, `equal`, `symmetric`, `pad`, `pocket`, `fillet`, `linear-pattern`, `appearance`, `save`.
+Інші іконки можна взяти з репозиторію FreeCAD: `src/Mod/PartDesign/Gui/Resources/icons`, `src/Mod/Sketcher/Gui/Resources/icons`.
