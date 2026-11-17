@@ -22,11 +22,11 @@
 
 <div class="lesson-cards">
   <a href="#/01-block-1x1">
-    <div class="card-emoji">🟥</div>
+    <img src="block1x1.jpg" alt="Блок 1×1">
     <b>Урок 1</b><br>Блок 1×1
   </a>
   <a href="#/02-plate-1x2">
-    <div class="card-emoji">🟦</div>
+    <img src="plate1x2.jpg" alt="Пластинка 1×2">
     <b>Урок 2</b><br>Пластинка 1×2
   </a>
   <a href="#/03-block-2x4">
