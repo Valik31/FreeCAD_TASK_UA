@@ -117,7 +117,7 @@ a:hover { text-decoration: underline; }
   border-left: 4px solid var(--theme); background: #fdf3f2;
   padding: .8em 1.2em; border-radius: 0 6px 6px 0; margin: 1.5em 0;
 }
-.preview { max-width: 300px; display: block; margin: .5em 0 1em; border-radius: 8px; }
+.markdown-section img.preview { max-width: 300px; display: block; margin: .5em 0 1em; border-radius: 8px; }
 
 /* ---------- Картки уроків ---------- */
 .lesson-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 1em 0 2em; }
