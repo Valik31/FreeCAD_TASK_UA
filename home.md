@@ -24,7 +24,7 @@
     <b>Урок 2</b><br>Пластинка 1×2
   </a>
   <a href="#/03-block-2x4">
-    <div class="card-emoji">🟨</div>
+    <img src="block2x4-10.jpg" alt="Блок 2×4">
     <b>Урок 3</b><br>Блок 2×4
   </a>
 </div>
