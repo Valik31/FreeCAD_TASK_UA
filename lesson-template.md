@@ -1,6 +1,6 @@
 # Урок N. Назва уроку
 
-<img class="preview" src="assets/назва-картинки.jpg" alt="Готова модель">
+<img class="preview" src="назва-картинки.jpg" alt="Готова модель">
 
 **Що навчимося:** …
 

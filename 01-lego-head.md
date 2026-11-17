@@ -1,6 +1,6 @@
 # Урок 1. Голова фігурки Lego
 
-<img class="preview" src="assets/lego-head.jpg" alt="Готова модель голови Lego">
+<img class="preview" src="lego-head.jpg" alt="Готова модель голови Lego">
 
 **Що навчимося:** створювати тіло в Part Design, малювати ескізи на гранях, видавлювати (Pad), вирізати (Pocket) і заокруглювати ребра (Fillet).
 

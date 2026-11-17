@@ -1,3 +1,3 @@
 - [Головна](home.md)
 - **Уроки**
-  - [1. Голова фігурки Lego](lessons/01-lego-head.md)
+  - [1. Голова фігурки Lego](01-lego-head.md)

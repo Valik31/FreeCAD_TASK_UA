@@ -12,8 +12,8 @@
 ## Уроки
 
 <div class="lesson-cards">
-  <a href="#/lessons/01-lego-head">
-    <img src="assets/lego-head.jpg" alt="Голова Lego">
+  <a href="#/01-lego-head">
+    <img src="lego-head.jpg" alt="Голова Lego">
     <b>Урок 1</b><br>Голова фігурки Lego
   </a>
 </div>
