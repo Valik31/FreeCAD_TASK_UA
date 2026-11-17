@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Уроки FreeCAD — стилі сайту
+   ========================================================================== */
+:root {
+  --theme: #c0392b;
+  --done: #27ae60;
+  --text: #34495e;
+  --heading: #2c3e50;
+  --muted: #7f8c8d;
+  --border: #eaecef;
+  --sidebar-w: 290px;
+  --font: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--font); font-size: 16px; line-height: 1.65;
+  color: var(--text); background: #fff; -webkit-font-smoothing: antialiased;
+}
+a { color: var(--theme); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Меню зліва ---------- */
+.sidebar {
+  position: fixed; top: 0; bottom: 0; left: 0; width: var(--sidebar-w);
+  overflow-y: auto; border-right: 1px solid var(--border); background: #fff;
+  padding: 0 0 40px; z-index: 20; transition: transform .25s;
+}
+.site-name {
+  display: block; text-align: center; font-size: 1.55em; color: var(--heading);
+  padding: 22px 15px 14px; font-weight: 400;
+}
+.site-name:hover { text-decoration: none; color: var(--theme); }
+.search { position: relative; padding: 0 15px 12px; border-bottom: 1px solid var(--border); }
+.search input {
+  width: 100%; font: inherit; font-size: 15px; padding: 8px 12px;
+  border: 1px solid #dfe2e5; border-radius: 6px; outline: none;
+}
+.search input:focus { border-color: var(--theme); }
+.search-results { margin-top: 6px; }
+.search-results a {
+  display: block; padding: 8px 10px; border-radius: 6px; color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+.search-results a:hover { background: #fdf3f2; text-decoration: none; }
+.search-results b { color: var(--theme); display: block; }
+.search-results small { color: var(--muted); font-size: 13px; line-height: 1.4; display: block; }
+.search-results mark { background: #fdebd0; color: inherit; padding: 0 1px; }
+.search-results .empty { color: var(--muted); font-size: 14px; padding: 6px 2px; }
+
+.sidebar-nav { padding: 10px 15px; font-size: 15px; }
+.sidebar-nav ul { list-style: none; margin: 0; padding: 0; }
+.sidebar-nav ul ul { padding-left: 14px; }
+.sidebar-nav li { margin: 4px 0; }
+.sidebar-nav strong { display: block; color: var(--heading); margin-top: 12px; font-weight: 700; }
+.sidebar-nav a { color: #505d6b; display: inline-block; padding: 2px 0; }
+.sidebar-nav a:hover { color: var(--theme); text-decoration: none; }
+.sidebar-nav a.active { color: var(--theme); font-weight: 600; }
+.sidebar-nav a.lesson-done::after { content: ' ✓'; color: var(--done); font-weight: 700; }
+
+.menu-btn {
+  display: none; position: fixed; left: 10px; bottom: 14px; z-index: 30;
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--theme); color: #fff; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+/* ---------- Основний вміст ---------- */
+.content { margin-left: var(--sidebar-w); padding: 20px 40px 60px; }
+.markdown-section { max-width: 860px; margin: 0 auto; padding-top: 20px; }
+.markdown-section h1, .markdown-section h2, .markdown-section h3 {
+  color: var(--heading); font-weight: 700; line-height: 1.3; scroll-margin-top: 16px;
+}
+.markdown-section h1 { font-size: 2.1em; margin: 0 0 .8em; }
+.markdown-section h2 { font-size: 1.6em; margin: 1.8em 0 .7em; }
+.markdown-section h3 { font-size: 1.25em; margin: 1.5em 0 .6em; }
+.markdown-section p, .markdown-section ul, .markdown-section ol { margin: .9em 0; }
+.markdown-section ol, .markdown-section ul { padding-left: 1.6em; }
+.markdown-section li { margin: .45em 0; }
+.markdown-section li > ul { margin: .3em 0; }
+.markdown-section img { max-width: 100%; border-radius: 6px; }
+.markdown-section li > p > img, .markdown-section p > img:only-child { margin: .5em 0; }
+.markdown-section code {
+  background: #f8f8f8; color: #e96900; padding: 2px 6px; border-radius: 3px;
+  font-size: .9em; font-family: Consolas, Menlo, monospace;
+}
+.markdown-section pre { background: #f8f8f8; padding: 14px; border-radius: 6px; overflow: auto; }
+.markdown-section pre code { color: inherit; padding: 0; }
+.markdown-section blockquote {
+  margin: 1.2em 0; padding: .4em 1.2em; border-left: 4px solid var(--theme);
+  color: #5a6a7a; background: #fafafa; border-radius: 0 6px 6px 0;
+}
+.markdown-section blockquote p { margin: .5em 0; }
+.markdown-section table { border-collapse: collapse; margin: 1em 0; }
+.markdown-section th, .markdown-section td { border: 1px solid #dfe2e5; padding: 6px 13px; }
+.markdown-section tr:nth-child(2n) { background: #f8f8f8; }
+.markdown-section strong { color: var(--heading); }
+
+/* ---------- Іконки інструментів у тексті ---------- */
+.markdown-section img.ic {
+  width: 1.35em; height: 1.35em; vertical-align: -0.3em; margin: 0 .25em 0 .1em;
+  display: inline; border-radius: 0; cursor: default;
+}
+
+/* ---------- Відео ---------- */
+.video {
+  position: relative; width: 100%; padding-top: 56.25%; margin: 1em 0 1.5em;
+  border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.12); background: #000;
+}
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-placeholder {
+  border: 2px dashed #ccc; border-radius: 8px; padding: 2.5em 1em;
+  text-align: center; color: #888; margin: 1em 0 1.5em;
+}
+
+/* ---------- Блоки уроку ---------- */
+.task {
+  border-left: 4px solid var(--theme); background: #fdf3f2;
+  padding: .8em 1.2em; border-radius: 0 6px 6px 0; margin: 1.5em 0;
+}
+.preview { max-width: 300px; display: block; margin: .5em 0 1em; border-radius: 8px; }
+
+/* ---------- Картки уроків ---------- */
+.lesson-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 1em 0 2em; }
+.lesson-cards a {
+  position: relative; display: block; border: 2px solid #e5e5e5; border-radius: 10px; padding: 12px;
+  color: inherit; font-weight: 600; transition: box-shadow .15s, border-color .15s;
+}
+.lesson-cards a:hover { box-shadow: 0 3px 12px rgba(0,0,0,.12); text-decoration: none; }
+.lesson-cards img { width: 100%; aspect-ratio: 4/3; object-fit: contain; border-radius: 6px; margin-bottom: 6px; background: #f6f6f6; }
+.lesson-cards .card-emoji { display: flex; align-items: center; justify-content: center; aspect-ratio: 4/3; font-size: 56px; background: #f6f6f6; border-radius: 6px; margin-bottom: 6px; }
+.lesson-cards b { color: var(--theme); }
+.lesson-cards a.done { border-color: var(--done); }
+.lesson-cards a.done::after {
+  content: '✓ Виконано'; position: absolute; top: 18px; right: 18px;
+  background: var(--done); color: #fff; font-size: 13px; padding: 2px 8px; border-radius: 12px;
+}
+
+/* ---------- Прогрес ---------- */
+#progress { margin: 1em 0 1.5em; }
+.progress-text { margin-bottom: 6px; font-weight: 600; }
+.progress-bar { height: 14px; background: #eee; border-radius: 7px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0; background: var(--done); transition: width .4s; }
+.progress-reset { font-size: 13px; color: #999 !important; cursor: pointer; margin-left: 10px; font-weight: 400; }
+
+.done-box { margin: 2.5em 0 1em; padding: 1.2em; border: 2px dashed #ddd; border-radius: 10px; text-align: center; }
+.done-btn {
+  font: inherit; font-size: 17px; padding: 12px 26px; border-radius: 8px; cursor: pointer;
+  border: 2px solid var(--done); background: #fff; color: var(--done); font-weight: 600;
+}
+.done-btn:hover { background: #eafaf1; }
+.done-btn.is-done { background: var(--done); color: #fff; }
+.done-hint { color: #999; font-size: 13px; margin-top: 8px; }
+
+/* ---------- Попередній / Наступний ---------- */
+.pager { max-width: 860px; margin: 2.5em auto 0; display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--border); padding-top: 1.2em; }
+.pager a { display: block; max-width: 48%; font-weight: 600; }
+.pager .next { text-align: right; margin-left: auto; }
+.pager small { display: block; color: var(--muted); font-weight: 400; font-size: 13px; }
+
+/* ---------- Збільшення картинок ---------- */
+.zoomable { cursor: zoom-in; }
+.zoom-overlay {
+  position: fixed; inset: 0; background: rgba(255,255,255,.96); z-index: 100;
+  display: flex; align-items: center; justify-content: center; cursor: zoom-out; padding: 20px;
+}
+.zoom-overlay img { max-width: 100%; max-height: 100%; box-shadow: 0 4px 30px rgba(0,0,0,.2); border-radius: 6px; }
+
+/* ---------- Мобільні ---------- */
+@media (max-width: 860px) {
+  .sidebar { transform: translateX(-100%); box-shadow: 2px 0 12px rgba(0,0,0,.15); }
+  body.menu-open .sidebar { transform: none; }
+  .menu-btn { display: block; }
+  .content { margin-left: 0; padding: 10px 18px 80px; }
+  .markdown-section h1 { font-size: 1.7em; }
+}

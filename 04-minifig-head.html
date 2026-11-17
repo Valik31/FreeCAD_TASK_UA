@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проєкт LEGO-чоловічок. Етап 1: Голова — Уроки FreeCAD українською</title>
+  <meta name="description" content="Проєкт LEGO-чоловічок. Етап 1: Голова. FreeCAD українською: відео та покрокова інструкція. створювати параметричне тіло, малювати ескізи на гранях, видавлювати (Pad), вирізати (Pocket) і…">
+  <link rel="canonical" href="https://valik31.github.io/FreeCAD_TASK_UA/04-minifig-head.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#c0392b">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Уроки FreeCAD українською">
+  <meta property="og:title" content="Проєкт LEGO-чоловічок. Етап 1: Голова — Уроки FreeCAD українською">
+  <meta property="og:description" content="Проєкт LEGO-чоловічок. Етап 1: Голова. FreeCAD українською: відео та покрокова інструкція. створювати параметричне тіло, малювати ескізи на гранях, видавлювати (Pad), вирізати (Pocket) і…">
+  <meta property="og:url" content="https://valik31.github.io/FreeCAD_TASK_UA/04-minifig-head.html">
+  <meta property="og:image" content="https://valik31.github.io/FreeCAD_TASK_UA/minifig-head.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap">
+  <link rel="stylesheet" href="style.css?v=862bdf59">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Проєкт LEGO-чоловічок. Етап 1: Голова", "url": "https://valik31.github.io/FreeCAD_TASK_UA/04-minifig-head.html", "inLanguage": "uk", "description": "Проєкт LEGO-чоловічок. Етап 1: Голова. FreeCAD українською: відео та покрокова інструкція. створювати параметричне тіло, малювати ескізи на гранях, видавлювати (Pad), вирізати (Pocket) і…", "educationalLevel": "Старша школа", "learningResourceType": "Відеоурок та інструкція", "isPartOf": {"@type": "WebSite", "name": "Уроки FreeCAD українською", "url": "https://valik31.github.io/FreeCAD_TASK_UA/"}}</script>
+</head>
+<body class="lesson" data-lesson="04-minifig-head">
+  <button class="menu-btn" aria-label="Меню">☰</button>
+  <aside class="sidebar">
+    <a class="site-name" href="index.html">FreeCAD: уроки</a>
+    <div class="search">
+      <input type="search" placeholder="Пошук…" aria-label="Пошук по уроках">
+      <div class="search-results"></div>
+    </div>
+    <nav class="sidebar-nav">
+<ul>
+<li><a href="index.html">Головна</a></li>
+<li><strong>Деталі LEGO</strong>
+<ul>
+<li><a href="01-block-1x1.html" data-lesson="01-block-1x1">1. Блок 1×1</a></li>
+<li><a href="02-plate-1x2.html" data-lesson="02-plate-1x2">2. Пластинка 1×2</a></li>
+<li><a href="03-block-2x4.html" data-lesson="03-block-2x4">3. Блок 2×4</a></li>
+</ul>
+</li>
+<li><strong>Проєкт: LEGO-чоловічок</strong>
+<ul>
+<li><a href="04-minifig-head.html" class="active" data-lesson="04-minifig-head">Етап 1. Голова</a></li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+  </aside>
+  <main class="content">
+    <article class="markdown-section">
+<h1>Проєкт LEGO-чоловічок. Етап 1: Голова</h1>
+<img loading="lazy" class="preview" src="minifig-head.jpg" alt="Готова модель голови LEGO-чоловічка">
+<p>Це перший етап проєкту: моделюємо LEGO-чоловічка частинами, і почнемо з голови.</p>
+<p><strong>Що навчимося:</strong> створювати параметричне тіло, малювати ескізи на гранях, видавлювати (Pad), вирізати (Pocket) і заокруглювати ребра (Fillet).</p>
+<h2 id="відео">Відео</h2>
+<div class="video">
+  <iframe loading="lazy" title="Відеоурок" src="https://www.youtube.com/embed/fwbixKrFBlA" allowfullscreen></iframe>
+</div>
+<h2 id="кроки">Кроки</h2>
+<blockquote>
+<p>Усі кола будуємо з центром у <strong>точці початку координат</strong>.</p>
+</blockquote>
+<p><strong>1. Тіло.</strong> У Part Design створіть <img class="ic" src="icons/body.svg" alt="" data-no-zoom><strong>параметричне тіло</strong> (Body).</p>
+<p><strong>2. Шия.</strong> Натисніть <img class="ic" src="icons/new-sketch.svg" alt="" data-no-zoom><strong>Новий ескіз</strong> і виберіть площину <strong>XY</strong>. Побудуйте коло діаметром <strong>6,5 мм</strong> і закрийте ескіз. Інструментом <img class="ic" src="icons/pad.svg" alt="" data-no-zoom><strong>Видавлювання (Pad)</strong> видавіть коло на <strong>1,2 мм</strong>.</p>
+<p><strong>3. Голова.</strong> Виділіть <strong>верхню грань</strong> циліндра, що вийшов, і створіть на ній новий ескіз. Побудуйте коло діаметром <strong>10,1 мм</strong> і закрийте ескіз. Видавіть його на <strong>8,4 мм</strong>.</p>
+<p><strong>4. Шип.</strong> Виділіть верхню грань голови і створіть новий ескіз. Побудуйте коло діаметром <strong>4,8 мм</strong> і закрийте ескіз. Видавіть його на <strong>1,7 мм</strong>.</p>
+<p><strong>5. Отвір знизу.</strong> Поверніть модель на 180°, щоб побачити низ. Виділіть <strong>нижню грань</strong> і створіть новий ескіз з колом діаметром <strong>4,8 мм</strong>. Закрийте ескіз і зробіть <img class="ic" src="icons/pocket.svg" alt="" data-no-zoom><strong>Виріз (Pocket)</strong> глибиною <strong>6 мм</strong>.</p>
+<p><strong>6. Заокруглення.</strong> Виділіть <strong>верхнє і нижнє ребро</strong> великого циліндра (голови) і застосуйте <img class="ic" src="icons/fillet.svg" alt="" data-no-zoom><strong>Заокруглення (Fillet)</strong> з радіусом <strong>1,75 мм</strong>.</p>
+<p><strong>7. Збереження.</strong> Виберіть <img class="ic" src="icons/save.svg" alt="" data-no-zoom><strong>Файл → Зберегти як…</strong></p>
+<p><strong>8. Здача.</strong> 📤 Надішліть файл з роботою в <strong>Google Classroom</strong>.</p>
+<div class="task">
+<p><strong>Завдання.</strong> Змоделюйте голову LEGO-чоловічка і збережіть файл з назвою<br>
+<code>Lego Голова Прізвище Клас.FCStd</code><br>
+Наприклад: <code>Lego Голова Петренко 10-А.FCStd</code><br><br>
+📤 <strong>Надішліть файл з роботою в Google Classroom.</strong></p>
+</div>
+
+<div class="done-box">
+  <button class="done-btn">Позначити як виконане</button>
+  <div class="done-hint">Позначка зберігається в цьому браузері</div>
+</div>
+    </article>
+<nav class="pager">
+<a class="prev" href="03-block-2x4.html"><small>← Попередній</small>3. Блок 2×4</a>
+</nav>
+  </main>
+  <script src="site.js?v=862bdf59"></script>
+</body>
+</html>

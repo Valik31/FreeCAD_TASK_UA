@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 2. Пластинка 1×2 — Уроки FreeCAD українською</title>
+  <meta name="description" content="Урок 2. Пластинка 1×2. FreeCAD українською: відео та покрокова інструкція. будувати коло з центром на осі, ставити обмеження рівності, симетрії та розмірності, а також знаходити й видаляти зайві…">
+  <link rel="canonical" href="https://valik31.github.io/FreeCAD_TASK_UA/02-plate-1x2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#c0392b">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Уроки FreeCAD українською">
+  <meta property="og:title" content="Урок 2. Пластинка 1×2 — Уроки FreeCAD українською">
+  <meta property="og:description" content="Урок 2. Пластинка 1×2. FreeCAD українською: відео та покрокова інструкція. будувати коло з центром на осі, ставити обмеження рівності, симетрії та розмірності, а також знаходити й видаляти зайві…">
+  <meta property="og:url" content="https://valik31.github.io/FreeCAD_TASK_UA/02-plate-1x2.html">
+  <meta property="og:image" content="https://valik31.github.io/FreeCAD_TASK_UA/plate1x2.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap">
+  <link rel="stylesheet" href="style.css?v=862bdf59">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Урок 2. Пластинка 1×2", "url": "https://valik31.github.io/FreeCAD_TASK_UA/02-plate-1x2.html", "inLanguage": "uk", "description": "Урок 2. Пластинка 1×2. FreeCAD українською: відео та покрокова інструкція. будувати коло з центром на осі, ставити обмеження рівності, симетрії та розмірності, а також знаходити й видаляти зайві…", "educationalLevel": "Старша школа", "learningResourceType": "Відеоурок та інструкція", "isPartOf": {"@type": "WebSite", "name": "Уроки FreeCAD українською", "url": "https://valik31.github.io/FreeCAD_TASK_UA/"}}</script>
+</head>
+<body class="lesson" data-lesson="02-plate-1x2">
+  <button class="menu-btn" aria-label="Меню">☰</button>
+  <aside class="sidebar">
+    <a class="site-name" href="index.html">FreeCAD: уроки</a>
+    <div class="search">
+      <input type="search" placeholder="Пошук…" aria-label="Пошук по уроках">
+      <div class="search-results"></div>
+    </div>
+    <nav class="sidebar-nav">
+<ul>
+<li><a href="index.html">Головна</a></li>
+<li><strong>Деталі LEGO</strong>
+<ul>
+<li><a href="01-block-1x1.html" data-lesson="01-block-1x1">1. Блок 1×1</a></li>
+<li><a href="02-plate-1x2.html" class="active" data-lesson="02-plate-1x2">2. Пластинка 1×2</a></li>
+<li><a href="03-block-2x4.html" data-lesson="03-block-2x4">3. Блок 2×4</a></li>
+</ul>
+</li>
+<li><strong>Проєкт: LEGO-чоловічок</strong>
+<ul>
+<li><a href="04-minifig-head.html" data-lesson="04-minifig-head">Етап 1. Голова</a></li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+  </aside>
+  <main class="content">
+    <article class="markdown-section">
+<h1>Урок 2. Пластинка 1×2</h1>
+<img loading="lazy" class="preview" src="plate1x2.jpg" alt="Готова пластинка 1×2">
+<p><strong>Що навчимося:</strong> будувати коло з центром на осі, ставити обмеження рівності, симетрії та розмірності, а також знаходити й видаляти зайві обмеження.</p>
+<h2 id="відео">Відео</h2>
+<div class="video">
+  <iframe loading="lazy" title="Відеоурок" src="https://www.youtube.com/embed/LoHtNpbouKA" allowfullscreen></iframe>
+</div>
+<h2 id="кроки">Кроки</h2>
+<h3 id="1-ескіз">1. Ескіз</h3>
+<ol>
+<li>
+<p>Відкрийте FreeCAD і під час створення нового файлу виберіть <img class="ic" src="icons/body.svg" alt="" data-no-zoom><strong>Параметричне тіло</strong> (Parametric Body).</p>
+</li>
+<li>
+<p>Натисніть <img class="ic" src="icons/new-sketch.svg" alt="" data-no-zoom><strong>Новий ескіз</strong> і виберіть площину <strong>XY</strong>.</p>
+</li>
+<li>
+<p>Виберіть інструмент <img class="ic" src="icons/rect-center.svg" alt="" data-no-zoom><strong>Центральний прямокутник</strong>, клацніть у <strong>точці початку координат</strong> і намалюйте прямокутник: ширина <strong>15,8 мм</strong>, довжина <strong>7,8 мм</strong>.</p>
+</li>
+<li>
+<p>Виберіть інструмент <img class="ic" src="icons/circle.svg" alt="" data-no-zoom><strong>Коло</strong> (за центром) і клацніть <strong>на червоній осі X</strong>, щоб центр кола лежав на ній. Задайте <strong>діаметр 4,8 мм</strong>.</p>
+<blockquote>
+<p>💡 <strong>Перевірка:</strong> спробуйте потягнути центр кола мишкою. Якщо він рухається лише вздовж червоної осі, ви все зробили правильно.</p>
+</blockquote>
+</li>
+<li>
+<p>Правіше намалюйте друге коло будь-якого розміру, теж з центром на осі X.</p>
+</li>
+<li>
+<p>Затисніть <strong>Ctrl</strong>, виділіть контури обох кіл і застосуйте обмеження <img class="ic" src="icons/equal.svg" alt="" data-no-zoom><strong>рівності</strong>.</p>
+</li>
+<li>
+<p>Затисніть <strong>Ctrl</strong>, виділіть центри обох кіл і <strong>зелену вісь Y</strong>, потім застосуйте обмеження <img class="ic" src="icons/symmetric.svg" alt="" data-no-zoom><strong>симетрії</strong>.</p>
+<blockquote>
+<p>⚠️ <strong>Увага:</strong> тут FreeCAD може повідомити про зайве (надлишкове) обмеження. Подивіться його номер у повідомленні, знайдіть обмеження з цим номером у списку обмежень, клацніть по ньому <strong>правою кнопкою миші</strong> й видаліть.</p>
+</blockquote>
+</li>
+<li>
+<p>Виберіть інструмент <img class="ic" src="icons/dimension.svg" alt="" data-no-zoom><strong>Розмірність</strong>, виділіть центри обох кіл і задайте відстань між ними <strong>8 мм</strong>.</p>
+</li>
+<li>
+<p>Вийдіть з ескізу кнопкою <img class="ic" src="icons/leave-sketch.svg" alt="" data-no-zoom><strong>Leave Sketch</strong>.</p>
+</li>
+</ol>
+<h3 id="2-основа-пластинки">2. Основа пластинки</h3>
+<ol start="10">
+<li>Клацніть у будь-якому порожньому місці робочої області, щоб ескіз став чорним.</li>
+<li>Затисніть <strong>Ctrl</strong> і виділіть <strong>чотири сторони прямокутника</strong>.</li>
+<li>Виберіть <img class="ic" src="icons/pad.svg" alt="" data-no-zoom><strong>Видавлювання</strong> (Pad), задайте довжину <strong>3,2 мм</strong> і поставте галочку <strong>«Зворотний»</strong>. Натисніть <strong>ОК</strong>.</li>
+</ol>
+<h3 id="3-шипи">3. Шипи</h3>
+<ol start="13">
+<li>У лівій панелі розкрийте видавлювання (<strong>Pad</strong>), виберіть ескіз (<strong>Sketch</strong>) і зробіть його видимим (клавіша <strong>Пробіл</strong>).</li>
+<li>Затисніть <strong>Ctrl</strong> і виділіть <strong>обидва кола</strong>.</li>
+<li>Виберіть <img class="ic" src="icons/pad.svg" alt="" data-no-zoom><strong>Видавлювання</strong> і задайте довжину <strong>1,7 мм</strong>. Натисніть <strong>ОК</strong>.</li>
+<li>Збережіть файл: <img class="ic" src="icons/save.svg" alt="" data-no-zoom><strong>Файл → Зберегти як…</strong></li>
+<li>📤 Надішліть файл з роботою в <strong>Google Classroom</strong>.</li>
+</ol>
+<div class="task">
+<p><strong>Завдання.</strong> Змоделюйте пластинку 1×2 і збережіть файл з назвою<br>
+<code>Пластинка 1x2 Прізвище Клас.FCStd</code><br><br>
+📤 <strong>Надішліть файл з роботою в Google Classroom.</strong></p>
+</div>
+
+<div class="done-box">
+  <button class="done-btn">Позначити як виконане</button>
+  <div class="done-hint">Позначка зберігається в цьому браузері</div>
+</div>
+    </article>
+<nav class="pager">
+<a class="prev" href="01-block-1x1.html"><small>← Попередній</small>1. Блок 1×1</a>
+<a class="next" href="03-block-2x4.html"><small>Наступний →</small>3. Блок 2×4</a>
+</nav>
+  </main>
+  <script src="site.js?v=862bdf59"></script>
+</body>
+</html>

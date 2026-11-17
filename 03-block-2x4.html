@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 3. Блок 2×4 — Уроки FreeCAD українською</title>
+  <meta name="description" content="Урок 3. Блок 2×4. FreeCAD українською: відео та покрокова інструкція. будувати центральний прямокутник, прив&#x27;язувати ескіз до країв грані через зовнішню геометрію , ставити обмеження рівності і…">
+  <link rel="canonical" href="https://valik31.github.io/FreeCAD_TASK_UA/03-block-2x4.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#c0392b">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Уроки FreeCAD українською">
+  <meta property="og:title" content="Урок 3. Блок 2×4 — Уроки FreeCAD українською">
+  <meta property="og:description" content="Урок 3. Блок 2×4. FreeCAD українською: відео та покрокова інструкція. будувати центральний прямокутник, прив&#x27;язувати ескіз до країв грані через зовнішню геометрію , ставити обмеження рівності і…">
+  <meta property="og:url" content="https://valik31.github.io/FreeCAD_TASK_UA/03-block-2x4.html">
+  <meta property="og:image" content="https://valik31.github.io/FreeCAD_TASK_UA/block2x4-00.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap">
+  <link rel="stylesheet" href="style.css?v=862bdf59">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Урок 3. Блок 2×4", "url": "https://valik31.github.io/FreeCAD_TASK_UA/03-block-2x4.html", "inLanguage": "uk", "description": "Урок 3. Блок 2×4. FreeCAD українською: відео та покрокова інструкція. будувати центральний прямокутник, прив'язувати ескіз до країв грані через зовнішню геометрію , ставити обмеження рівності і…", "educationalLevel": "Старша школа", "learningResourceType": "Відеоурок та інструкція", "isPartOf": {"@type": "WebSite", "name": "Уроки FreeCAD українською", "url": "https://valik31.github.io/FreeCAD_TASK_UA/"}}</script>
+</head>
+<body class="lesson" data-lesson="03-block-2x4">
+  <button class="menu-btn" aria-label="Меню">☰</button>
+  <aside class="sidebar">
+    <a class="site-name" href="index.html">FreeCAD: уроки</a>
+    <div class="search">
+      <input type="search" placeholder="Пошук…" aria-label="Пошук по уроках">
+      <div class="search-results"></div>
+    </div>
+    <nav class="sidebar-nav">
+<ul>
+<li><a href="index.html">Головна</a></li>
+<li><strong>Деталі LEGO</strong>
+<ul>
+<li><a href="01-block-1x1.html" data-lesson="01-block-1x1">1. Блок 1×1</a></li>
+<li><a href="02-plate-1x2.html" data-lesson="02-plate-1x2">2. Пластинка 1×2</a></li>
+<li><a href="03-block-2x4.html" class="active" data-lesson="03-block-2x4">3. Блок 2×4</a></li>
+</ul>
+</li>
+<li><strong>Проєкт: LEGO-чоловічок</strong>
+<ul>
+<li><a href="04-minifig-head.html" data-lesson="04-minifig-head">Етап 1. Голова</a></li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+  </aside>
+  <main class="content">
+    <article class="markdown-section">
+<h1>Урок 3. Блок 2×4</h1>
+<img loading="lazy" class="preview" src="block2x4-00.jpg" alt="Готовий блок LEGO 2×4 зверху і знизу">
+<p><strong>Завдання.</strong> Спроєктуйте у FreeCAD деталь LEGO 2×4.</p>
+<p><strong>Що навчимося:</strong> будувати центральний прямокутник, прив'язувати ескіз до країв грані через <img class="ic" src="icons/external.svg" alt="" data-no-zoom><strong>зовнішню геометрію</strong>, ставити обмеження <img class="ic" src="icons/equal.svg" alt="" data-no-zoom><strong>рівності</strong> і <img class="ic" src="icons/symmetric.svg" alt="" data-no-zoom><strong>симетрії</strong>, робити <img class="ic" src="icons/linear-pattern.svg" alt="" data-no-zoom><strong>лінійний масив</strong> і <img class="ic" src="icons/pocket.svg" alt="" data-no-zoom><strong>виріз</strong>, налаштовувати матеріал і колір.</p>
+<h2 id="відео">Відео</h2>
+<div class="video">
+  <iframe loading="lazy" title="Відеоурок" src="https://www.youtube.com/embed/t6yTvfP7Ums" allowfullscreen></iframe>
+</div>
+<h2 id="хід-роботи">Хід роботи</h2>
+<h3 id="1-основа">1. Основа</h3>
+<ol>
+<li>
+<p>Відкрийте FreeCAD і під час створення нового файлу виберіть <img class="ic" src="icons/body.svg" alt="" data-no-zoom><strong>Parametric Body</strong>.</p>
+</li>
+<li>
+<p>Натисніть <img class="ic" src="icons/new-sketch.svg" alt="" data-no-zoom><strong>Новий ескіз</strong> (New Sketch) і виберіть площину <strong>XY</strong>. Ескіз відкриється в режимі редагування, і ви дивитиметеся на нього згори.</p>
+</li>
+<li>
+<p>Виберіть інструмент <img class="ic" src="icons/rect-center.svg" alt="" data-no-zoom><strong>Центральний прямокутник</strong> (Centered Rectangle) і клацніть у точці початку координат.</p>
+</li>
+<li>
+<p>Введіть з клавіатури розміри: ширина <strong>47,7 мм</strong>, довжина <strong>23,7 мм</strong>.</p>
+<p><img loading="lazy" src="block2x4-01.jpg" alt="Ескіз основи 47,7 × 23,7 мм" /></p>
+</li>
+<li>
+<p>Вийдіть з ескізу кнопкою <img class="ic" src="icons/leave-sketch.svg" alt="" data-no-zoom><strong>Leave Sketch</strong>.</p>
+</li>
+<li>
+<p>Видавіть ескіз інструментом <img class="ic" src="icons/pad.svg" alt="" data-no-zoom><strong>Видавлювання</strong> (Pad) на <strong>14,4 мм</strong>. Інші параметри залишіть як є й натисніть <strong>ОК</strong>.</p>
+<p><img loading="lazy" src="block2x4-02.jpg" alt="Видавлювання основи на 14,4 мм" /></p>
+</li>
+</ol>
+<h3 id="2-шипи-зверху">2. Шипи зверху</h3>
+<ol start="7">
+<li>
+<p>Виділіть <strong>верхню грань</strong> блока й натисніть <img class="ic" src="icons/new-sketch.svg" alt="" data-no-zoom><strong>Новий ескіз</strong>.</p>
+</li>
+<li>
+<p>Намалюйте одне коло інструментом <img class="ic" src="icons/circle.svg" alt="" data-no-zoom><strong>Circle</strong> у будь-якому місці.</p>
+</li>
+<li>
+<p>Кола треба розташувати відносно країв грані, тому скористаємося інструментом <img class="ic" src="icons/external.svg" alt="" data-no-zoom><strong>Зовнішня геометрія</strong> (External geometry). Він дає змогу посилатися на ребра грані й точно прив'язувати до них кола:</p>
+<ul>
+<li>спочатку клацніть кнопку <img class="ic" src="icons/construction.svg" alt="" data-no-zoom><strong>Режим допоміжних ліній</strong> (Toggle construction geometry), щоб лінії стали пунктирними;</li>
+<li>виберіть інструмент <img class="ic" src="icons/external.svg" alt="" data-no-zoom><strong>Зовнішня геометрія</strong> і клацніть по прямокутнику (краях грані);</li>
+<li>знову клацніть кнопку <img class="ic" src="icons/construction.svg" alt="" data-no-zoom><strong>Режим допоміжних ліній</strong>, щоб вимкнути його.</li>
+</ul>
+</li>
+<li>
+<p>Інструментом <img class="ic" src="icons/dimension.svg" alt="" data-no-zoom><strong>Розмірність</strong> задайте відстань <strong>6 мм</strong> від центра кола до лівого ребра. Так само задайте 6 мм до верхнього ребра.</p>
+</li>
+<li>
+<p>Задайте <strong>діаметр кола 7,2 мм</strong>.</p>
+</li>
+<li>
+<p>Намалюйте друге коло.</p>
+</li>
+<li>
+<p>Затисніть <strong>Ctrl</strong>, виберіть обидва кола і застосуйте обмеження <img class="ic" src="icons/equal.svg" alt="" data-no-zoom><strong>рівності</strong>.</p>
+</li>
+<li>
+<p>Затисніть <strong>Ctrl</strong>, виберіть центри обох кіл і вісь X (червону лінію), потім застосуйте обмеження <img class="ic" src="icons/symmetric.svg" alt="" data-no-zoom><strong>симетрії</strong>.</p>
+<p><img loading="lazy" src="block2x4-03.jpg" alt="Два кола: 6 мм від країв, діаметр 7,2 мм, симетричні відносно осі X" /></p>
+</li>
+<li>
+<p>Вийдіть з ескізу (<img class="ic" src="icons/leave-sketch.svg" alt="" data-no-zoom><strong>Leave Sketch</strong>) і видавіть його (<img class="ic" src="icons/pad.svg" alt="" data-no-zoom><strong>Pad</strong>) на <strong>2,7 мм</strong>.</p>
+<p><img loading="lazy" src="block2x4-04.jpg" alt="Видавлювання двох шипів на 2,7 мм" /></p>
+</li>
+<li>
+<p>Виділіть щойно створене видавлювання (<strong>Pad001</strong>) і натисніть <img class="ic" src="icons/linear-pattern.svg" alt="" data-no-zoom><strong>Лінійний масив</strong>. Напрямок: <strong>горизонтальна вісь ескізу</strong>, довжина <strong>36 мм</strong> (проміжок, у який мають уміститися копії), кількість <strong>4</strong>. Натисніть <strong>ОК</strong>.</p>
+<p><img loading="lazy" src="block2x4-05.jpg" alt="Лінійний масив: 36 мм, 4 копії" /></p>
+</li>
+</ol>
+<h3 id="3-виріз-знизу-з-трубками">3. Виріз знизу з трубками</h3>
+<ol start="17">
+<li>
+<p>Поверніть модель, виділіть <strong>нижню грань</strong> блока й натисніть <img class="ic" src="icons/new-sketch.svg" alt="" data-no-zoom><strong>Новий ескіз</strong>.</p>
+</li>
+<li>
+<p>Прив'яжіть ескіз до країв грані так само, як у кроці 9:</p>
+<ul>
+<li>клацніть кнопку <img class="ic" src="icons/construction.svg" alt="" data-no-zoom><strong>Режим допоміжних ліній</strong>;</li>
+<li>виберіть <img class="ic" src="icons/external.svg" alt="" data-no-zoom><strong>Зовнішня геометрія</strong> і клацніть по прямокутнику;</li>
+<li>знову клацніть кнопку <img class="ic" src="icons/construction.svg" alt="" data-no-zoom><strong>Режим допоміжних ліній</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Намалюйте довільний <img class="ic" src="icons/rect.svg" alt="" data-no-zoom><strong>прямокутник</strong>. Інструментом <img class="ic" src="icons/dimension.svg" alt="" data-no-zoom><strong>Розмірність</strong> задайте відстань <strong>1,8 мм</strong> від верхнього лівого кута прямокутника до лівого ребра і так само до верхнього ребра.</p>
+</li>
+<li>
+<p>Затисніть <strong>Ctrl</strong>, виберіть верхній лівий кут прямокутника, нижній правий кут і точку початку координат, потім застосуйте <img class="ic" src="icons/symmetric.svg" alt="" data-no-zoom><strong>симетрію</strong>.</p>
+</li>
+<li>
+<p>Намалюйте коло з центром <strong>на осі X</strong> (червона лінія) і діаметром <strong>9,765 мм</strong>. Задайте відстань від його центра до лівого ребра прямокутника: <strong>10,2 мм</strong>.</p>
+</li>
+<li>
+<p>Намалюйте ще два кола: одне з центром у початку координат, друге з центром на осі X. Діаметри можуть бути довільні.</p>
+</li>
+<li>
+<p>Затисніть <strong>Ctrl</strong>, виберіть усі три кола й застосуйте <img class="ic" src="icons/equal.svg" alt="" data-no-zoom><strong>рівність</strong>.</p>
+</li>
+<li>
+<p>Задайте відстань від центра правого кола до правого ребра прямокутника: <strong>10,2 мм</strong>.</p>
+</li>
+<li>
+<p>Намалюйте ще три кола <strong>діаметром 7,2 мм</strong> зі спільними центрами з трьома попередніми колами.</p>
+<p><img loading="lazy" src="block2x4-06.jpg" alt="Ескіз знизу: стінки 1,8 мм і три трубки" /></p>
+</li>
+<li>
+<p>Вийдіть з ескізу, виберіть його й застосуйте <img class="ic" src="icons/pocket.svg" alt="" data-no-zoom><strong>Виріз</strong> (Pocket) глибиною <strong>12 мм</strong>. Натисніть <strong>ОК</strong>.</p>
+<p><img loading="lazy" src="block2x4-07.jpg" alt="Виріз глибиною 12 мм" /></p>
+<p><img loading="lazy" src="block2x4-08.jpg" alt="Результат: вигляд знизу" /></p>
+</li>
+</ol>
+<h3 id="4-матеріал-і-колір">4. Матеріал і колір</h3>
+<ol start="27">
+<li>
+<p>Виберіть <img class="ic" src="icons/body.svg" alt="" data-no-zoom><strong>Тіло</strong> в лівій панелі, перейдіть на вкладку <strong>Перегляд</strong> і натисніть <img class="ic" src="icons/appearance.svg" alt="" data-no-zoom><strong>Appearance</strong>.</p>
+</li>
+<li>
+<p>Виберіть матеріал <strong>Plastic</strong>.</p>
+</li>
+<li>
+<p>Ще раз натисніть <img class="ic" src="icons/appearance.svg" alt="" data-no-zoom><strong>Appearance</strong>, виберіть <strong>Колір дифузії</strong> і задайте колір на свій смак. Натисніть <strong>ОК</strong>.</p>
+<p><img loading="lazy" src="block2x4-09.jpg" alt="Вибір кольору" /></p>
+</li>
+<li>
+<p>Закрийте меню. Модель готова!</p>
+<p><img loading="lazy" src="block2x4-10.jpg" alt="Готовий блок 2×4" /></p>
+</li>
+<li>
+<p>Збережіть файл: <img class="ic" src="icons/save.svg" alt="" data-no-zoom><strong>Файл → Зберегти як…</strong></p>
+</li>
+<li>
+<p>📤 Надішліть файл з роботою в <strong>Google Classroom</strong>.</p>
+</li>
+</ol>
+<div class="task">
+<p><strong>Здача.</strong> Збережіть файл з назвою<br>
+<code>Блок 2x4 Прізвище Клас.FCStd</code><br><br>
+📤 <strong>Надішліть файл з роботою в Google Classroom.</strong></p>
+</div>
+
+<div class="done-box">
+  <button class="done-btn">Позначити як виконане</button>
+  <div class="done-hint">Позначка зберігається в цьому браузері</div>
+</div>
+    </article>
+<nav class="pager">
+<a class="prev" href="02-plate-1x2.html"><small>← Попередній</small>2. Пластинка 1×2</a>
+<a class="next" href="04-minifig-head.html"><small>Наступний →</small>Етап 1. Голова</a>
+</nav>
+  </main>
+  <script src="site.js?v=862bdf59"></script>
+</body>
+</html>

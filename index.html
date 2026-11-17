@@ -2,228 +2,104 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Уроки FreeCAD українською — 3D-моделювання деталей LEGO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Уроки FreeCAD українською — 3D-моделювання деталей LEGO</title>
+  <meta name="description" content="Безкоштовні відеоуроки та покрокові інструкції з 3D-моделювання у FreeCAD українською: блок LEGO 1×1, пластинка 1×2, блок 2×4, LEGO-чоловічок.">
+  <link rel="canonical" href="https://valik31.github.io/FreeCAD_TASK_UA/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="theme-color" content="#c0392b">
-  <meta name="description" content="Безкоштовні відеоуроки та покрокові інструкції з 3D-моделювання у FreeCAD українською: блок LEGO 1×1, пластинка 1×2, блок 2×4, LEGO-чоловічок. Для уроків технологій.">
-  <link rel="canonical" href="https://valik31.github.io/FreeCAD_TASK_UA/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="uk_UA">
   <meta property="og:site_name" content="Уроки FreeCAD українською">
   <meta property="og:title" content="Уроки FreeCAD українською — 3D-моделювання деталей LEGO">
-  <meta property="og:description" content="Відеоуроки та покрокові інструкції з FreeCAD: моделюємо деталі LEGO і LEGO-чоловічка.">
+  <meta property="og:description" content="Безкоштовні відеоуроки та покрокові інструкції з 3D-моделювання у FreeCAD українською: блок LEGO 1×1, пластинка 1×2, блок 2×4, LEGO-чоловічок.">
   <meta property="og:url" content="https://valik31.github.io/FreeCAD_TASK_UA/">
-  <meta property="og:image" content="https://valik31.github.io/FreeCAD_TASK_UA/block2x4-10.jpg">
+  <meta property="og:image" content="https://valik31.github.io/FreeCAD_TASK_UA/block1x1.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <style>
-    :root {
-      --theme-color: #c0392b;
-      --done: #27ae60;
-      --sidebar-width: 280px;
-    }
-    body, .sidebar, .markdown-section, input, button, .search input {
-      font-family: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
-    }
-    body { font-size: 16px; }
-    .markdown-section h1, .markdown-section h2, .markdown-section h3 { font-weight: 700; }
-    .markdown-section { max-width: 860px; }
-    .app-name-link { font-size: 1.15em; }
-
-    /* ---------- Відео YouTube 16:9 ---------- */
-    .video {
-      position: relative; width: 100%; padding-top: 56.25%;
-      margin: 1em 0 1.5em; border-radius: 8px; overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,.12); background: #000;
-    }
-    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .video-placeholder {
-      border: 2px dashed #ccc; border-radius: 8px; padding: 2.5em 1em;
-      text-align: center; color: #888; margin: 1em 0 1.5em;
-    }
-
-    /* ---------- Блоки уроку ---------- */
-    .task {
-      border-left: 4px solid var(--theme-color); background: #fdf3f2;
-      padding: .8em 1.2em; border-radius: 0 6px 6px 0; margin: 1.2em 0;
-    }
-    /* Іконки інструментів FreeCAD у тексті */
-    .markdown-section img.ic {
-      width: 1.35em; height: 1.35em; vertical-align: -0.3em; margin: 0 .25em 0 .1em;
-      display: inline; box-shadow: none; border-radius: 0; cursor: default;
-    }
-    .preview { max-width: 300px; display: block; margin: .5em 0 1em; border-radius: 8px; }
-    .markdown-section table { display: table; }
-
-    /* ---------- Картки уроків на головній ---------- */
-    .lesson-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 1em 0 2em; }
-    .lesson-cards a {
-      position: relative; display: block; border: 2px solid #e5e5e5; border-radius: 10px; padding: 12px;
-      text-decoration: none !important; color: inherit; transition: box-shadow .15s, border-color .15s;
-      font-weight: 600 !important;
-    }
-    .lesson-cards a:hover { box-shadow: 0 3px 12px rgba(0,0,0,.12); }
-    .lesson-cards img { width: 100%; aspect-ratio: 4/3; object-fit: contain; border-radius: 6px; margin-bottom: 6px; background: #f6f6f6; }
-    .lesson-cards .card-emoji { display: flex; align-items: center; justify-content: center; aspect-ratio: 4/3; font-size: 56px; background: #f6f6f6; border-radius: 6px; margin-bottom: 6px; }
-    .lesson-cards b { color: var(--theme-color); }
-    .lesson-cards a.done { border-color: var(--done); }
-    .lesson-cards a.done::after {
-      content: '✓ Виконано'; position: absolute; top: 18px; right: 18px;
-      background: var(--done); color: #fff; font-size: 13px; padding: 2px 8px; border-radius: 12px;
-    }
-
-    /* ---------- Прогрес ---------- */
-    #progress { margin: 1em 0 1.5em; }
-    .progress-text { margin-bottom: 6px; font-weight: 600; }
-    .progress-bar { height: 14px; background: #eee; border-radius: 7px; overflow: hidden; }
-    .progress-fill { height: 100%; width: 0; background: var(--done); transition: width .4s; }
-    .progress-reset { font-size: 13px; color: #999 !important; cursor: pointer; margin-left: 10px; font-weight: 400; }
-
-    .done-box { margin: 2.5em 0 1em; padding: 1.2em; border: 2px dashed #ddd; border-radius: 10px; text-align: center; }
-    .done-btn {
-      font-size: 17px; padding: 12px 26px; border-radius: 8px; cursor: pointer;
-      border: 2px solid var(--done); background: #fff; color: var(--done); font-weight: 600;
-    }
-    .done-btn:hover { background: #eafaf1; }
-    .done-btn.is-done { background: var(--done); color: #fff; }
-    .done-hint { color: #999; font-size: 13px; margin-top: 8px; }
-
-    .sidebar-nav a.lesson-done::after { content: ' ✓'; color: var(--done); font-weight: 700; }
-    .markdown-section .task-list-item input { cursor: pointer; transform: scale(1.2); margin-right: 6px; }
-  </style>
+  <link rel="stylesheet" href="style.css?v=862bdf59">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Уроки FreeCAD українською", "url": "https://valik31.github.io/FreeCAD_TASK_UA/", "inLanguage": "uk", "description": "Безкоштовні відеоуроки та покрокові інструкції з 3D-моделювання у FreeCAD українською: блок LEGO 1×1, пластинка 1×2, блок 2×4, LEGO-чоловічок."}</script>
 </head>
-<body>
-  <div id="app">Завантаження…</div>
-  <script>
-    /* =====================================================================
-       Прогрес учня: зберігається в браузері (localStorage) на цьому пристрої.
-       Сторінка вважається уроком, якщо назва файлу починається з двох цифр
-       і дефіса: 01-block-1x1.md, 04-minifig-head.md тощо.
-       ===================================================================== */
-    var PROGRESS_KEY = 'freecad-progress-v1';
+<body class="home" data-lesson="">
+  <button class="menu-btn" aria-label="Меню">☰</button>
+  <aside class="sidebar">
+    <a class="site-name" href="index.html">FreeCAD: уроки</a>
+    <div class="search">
+      <input type="search" placeholder="Пошук…" aria-label="Пошук по уроках">
+      <div class="search-results"></div>
+    </div>
+    <nav class="sidebar-nav">
+<ul>
+<li><a href="index.html">Головна</a></li>
+<li><strong>Деталі LEGO</strong>
+<ul>
+<li><a href="01-block-1x1.html" data-lesson="01-block-1x1">1. Блок 1×1</a></li>
+<li><a href="02-plate-1x2.html" data-lesson="02-plate-1x2">2. Пластинка 1×2</a></li>
+<li><a href="03-block-2x4.html" data-lesson="03-block-2x4">3. Блок 2×4</a></li>
+</ul>
+</li>
+<li><strong>Проєкт: LEGO-чоловічок</strong>
+<ul>
+<li><a href="04-minifig-head.html" data-lesson="04-minifig-head">Етап 1. Голова</a></li>
+</ul>
+</li>
+</ul>
 
-    function loadProgress() {
-      try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; } catch (e) { return {}; }
-    }
-    function saveProgress(p) {
-      try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); } catch (e) {}
-    }
-    function lessonIdFromPath(path) {
-      var m = (path || '').replace(/\.md$/, '').match(/\/?(\d{2}-[^\/?#]+)$/);
-      return m ? m[1] : null;
-    }
-    function lessonIdFromHref(href) {
-      var m = (href || '').replace(/\.md$/, '').match(/#\/(\d{2}-[^\/?#]+)/);
-      return m ? m[1] : null;
-    }
+    </nav>
+  </aside>
+  <main class="content">
+    <article class="markdown-section">
+<h1>FreeCAD: завдання та відеоуроки</h1>
+<p>Тут зібрані уроки з 3D-моделювання у <strong>FreeCAD</strong>. Ми почнемо з простих деталей LEGO, а потім крок за кроком змоделюємо цілого LEGO-чоловічка.</p>
+<blockquote>
+<p><strong>Потрібен FreeCAD версії 1.0 або новішої.</strong></p>
+<p>💻 Завантажити безкоштовно: <a href="https://www.freecad.org/downloads.php">freecad.org</a></p>
+<p>🌐 Онлайн-версія без встановлення: <a href="https://thecadhub.com/free-tools/freecad-web/">FreeCAD Online</a>. Працює лише в Chrome або Edge на комп'ютері. Це бета-версія, тож частина функцій може не працювати. Збережену модель завантажуйте собі як файл <code>.FCStd</code>.</p>
+</blockquote>
+<div id="progress"></div>
+<h2 id="як-працювати-з-уроком">Як працювати з уроком</h2>
+<ol>
+<li>Подивіться відео до кінця.</li>
+<li>Повторіть усі кроки у своєму FreeCAD. Відео можна ставити на паузу.</li>
+<li>Збережіть файл з назвою, як написано в завданні.</li>
+<li>Натисніть <strong>«Позначити як виконане»</strong> внизу сторінки уроку.</li>
+<li>Надішліть файл <code>.FCStd</code> з роботою в <strong>Google Classroom</strong>.</li>
+</ol>
+<h2 id="деталі-lego">Деталі LEGO</h2>
+<div class="lesson-cards">
+  <a href="01-block-1x1.html">
+    <img loading="lazy" src="block1x1.jpg" alt="Блок 1×1">
+    <b>Урок 1</b><br>Блок 1×1
+  </a>
+  <a href="02-plate-1x2.html">
+    <img loading="lazy" src="plate1x2.jpg" alt="Пластинка 1×2">
+    <b>Урок 2</b><br>Пластинка 1×2
+  </a>
+  <a href="03-block-2x4.html">
+    <img loading="lazy" src="block2x4-10.jpg" alt="Блок 2×4">
+    <b>Урок 3</b><br>Блок 2×4
+  </a>
+</div>
+<h2 id="проєкт-lego-чоловічок">Проєкт: LEGO-чоловічок</h2>
+<p>Моделюємо фігурку окремими етапами.</p>
+<div class="lesson-cards">
+  <a href="04-minifig-head.html">
+    <img loading="lazy" src="minifig-head.jpg" alt="Голова LEGO-чоловічка">
+    <b>Етап 1</b><br>Голова
+  </a>
+</div>
 
-    function progressPlugin(hook, vm) {
-      hook.afterEach(function (html, next) {
-        if (lessonIdFromPath(vm.route.path)) {
-          html += '<div class="done-box">' +
-                    '<button class="done-btn"></button>' +
-                    '<div class="done-hint">Позначка зберігається в цьому браузері</div>' +
-                  '</div>';
-        }
-        next(html);
-      });
 
-      hook.doneEach(function () { refresh(vm); });
-    }
-
-    function refresh(vm) {
-      var p = loadProgress();
-      var id = lessonIdFromPath(vm.route.path);
-      var done = p.done || {};
-
-      // Кнопка «Виконано» на сторінці уроку
-      var btn = document.querySelector('.done-btn');
-      if (btn && id) {
-        var isDone = !!done[id];
-        btn.className = 'done-btn' + (isDone ? ' is-done' : '');
-        btn.textContent = isDone ? '✓ Виконано (натисніть, щоб скасувати)' : 'Позначити як виконане';
-        btn.onclick = function () {
-          var q = loadProgress(); q.done = q.done || {};
-          if (q.done[id]) delete q.done[id]; else q.done[id] = new Date().toISOString().slice(0, 10);
-          saveProgress(q); refresh(vm);
-        };
-      }
-
-      // Чек-лист «Самоперевірка»: можна ставити галочки, вони запам'ятовуються
-      if (id) {
-        var boxes = document.querySelectorAll('.markdown-section input[type=checkbox]');
-        var checks = (p.checks && p.checks[id]) || [];
-        boxes.forEach(function (box, i) {
-          box.disabled = false;
-          box.checked = !!checks[i];
-          box.onchange = function () {
-            var q = loadProgress(); q.checks = q.checks || {};
-            var arr = q.checks[id] || [];
-            arr[i] = box.checked; q.checks[id] = arr;
-            saveProgress(q);
-          };
-        });
-      }
-
-      // Галочки в меню зліва
-      document.querySelectorAll('.sidebar-nav a').forEach(function (a) {
-        var lid = lessonIdFromHref(a.getAttribute('href'));
-        a.classList.toggle('lesson-done', !!(lid && done[lid]));
-      });
-
-      // Картки та смужка прогресу на головній
-      var cards = document.querySelectorAll('.lesson-cards a');
-      var total = 0, count = 0;
-      cards.forEach(function (a) {
-        var lid = lessonIdFromHref(a.getAttribute('href'));
-        if (!lid) return;
-        total++;
-        if (done[lid]) { count++; a.classList.add('done'); } else { a.classList.remove('done'); }
-      });
-      var box = document.getElementById('progress');
-      if (box && total) {
-        var pct = Math.round(count / total * 100);
-        box.innerHTML =
-          '<div class="progress-text">Твій прогрес: ' + count + ' з ' + total + ' (' + pct + '%)' +
-          (count ? '<a class="progress-reset">скинути</a>' : '') + '</div>' +
-          '<div class="progress-bar"><div class="progress-fill"></div></div>';
-        setTimeout(function () { box.querySelector('.progress-fill').style.width = pct + '%'; }, 30);
-        var r = box.querySelector('.progress-reset');
-        if (r) r.onclick = function () {
-          if (confirm('Скинути всі позначки «Виконано»?')) { saveProgress({}); refresh(vm); }
-        };
-      }
-    }
-
-    window.$docsify = {
-      name: 'FreeCAD: уроки',
-      homepage: 'home.md',
-      loadSidebar: true,
-      subMaxLevel: 0,
-      auto2top: true,
-      relativePath: false,
-      search: {
-        placeholder: 'Пошук…',
-        noData: 'Нічого не знайдено',
-        depth: 3
-      },
-      pagination: {
-        previousText: 'Попередній',
-        nextText: 'Наступний',
-        crossChapter: true
-      },
-      plugins: [progressPlugin]
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+    </article>
+<nav class="pager">
+<span></span>
+<a class="next" href="01-block-1x1.html"><small>Наступний →</small>1. Блок 1×1</a>
+</nav>
+  </main>
+  <script src="site.js?v=862bdf59"></script>
 </body>
 </html>

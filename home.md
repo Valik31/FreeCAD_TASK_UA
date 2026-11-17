@@ -21,15 +21,15 @@
 ## Деталі LEGO
 
 <div class="lesson-cards">
-  <a href="#/01-block-1x1">
+  <a href="01-block-1x1.html">
     <img src="block1x1.jpg" alt="Блок 1×1">
     <b>Урок 1</b><br>Блок 1×1
   </a>
-  <a href="#/02-plate-1x2">
+  <a href="02-plate-1x2.html">
     <img src="plate1x2.jpg" alt="Пластинка 1×2">
     <b>Урок 2</b><br>Пластинка 1×2
   </a>
-  <a href="#/03-block-2x4">
+  <a href="03-block-2x4.html">
     <img src="block2x4-10.jpg" alt="Блок 2×4">
     <b>Урок 3</b><br>Блок 2×4
   </a>
@@ -40,7 +40,7 @@
 Моделюємо фігурку окремими етапами.
 
 <div class="lesson-cards">
-  <a href="#/04-minifig-head">
+  <a href="04-minifig-head.html">
     <img src="minifig-head.jpg" alt="Голова LEGO-чоловічка">
     <b>Етап 1</b><br>Голова
   </a>
