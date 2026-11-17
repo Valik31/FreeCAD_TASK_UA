@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://valik31.github.io/FreeCAD_TASK_UA/sitemap.xml
