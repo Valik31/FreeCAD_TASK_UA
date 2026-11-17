@@ -32,6 +32,7 @@
 10. Клацніть по контуру **кола**.
 11. Виберіть <img class="ic" src="icons/pad.svg" alt="" data-no-zoom>**Видавлювання** і задайте довжину **1,8 мм**. Натисніть **ОК**.
 12. Збережіть файл: <img class="ic" src="icons/save.svg" alt="" data-no-zoom>**Файл → Зберегти як…**
+13. 📤 Надішліть файл з роботою в **Google Classroom**.
 
 <div class="task">
 

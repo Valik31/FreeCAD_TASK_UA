@@ -87,6 +87,9 @@
 
     ![Готовий блок 2×4](block2x4-10.jpg)
 
+31. Збережіть файл: <img class="ic" src="icons/save.svg" alt="" data-no-zoom>**Файл → Зберегти як…**
+32. 📤 Надішліть файл з роботою в **Google Classroom**.
+
 <div class="task">
 
 **Здача.** Збережіть файл з назвою<br>
