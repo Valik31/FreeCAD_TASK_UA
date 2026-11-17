@@ -5,16 +5,25 @@
   <title>FreeCAD — завдання та відеоуроки</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Завдання та відеоуроки з 3D-моделювання у FreeCAD">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
     :root {
       --theme-color: #c0392b;
-      --sidebar-width: 270px;
+      --done: #27ae60;
+      --sidebar-width: 280px;
+    }
+    body, .sidebar, .markdown-section, input, button, .search input {
+      font-family: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
     }
     body { font-size: 16px; }
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 { font-weight: 700; }
     .markdown-section { max-width: 860px; }
     .app-name-link { font-size: 1.15em; }
-    /* Адаптивне відео YouTube 16:9 */
+
+    /* ---------- Відео YouTube 16:9 ---------- */
     .video {
       position: relative; width: 100%; padding-top: 56.25%;
       margin: 1em 0 1.5em; border-radius: 8px; overflow: hidden;
@@ -25,29 +34,160 @@
       border: 2px dashed #ccc; border-radius: 8px; padding: 2.5em 1em;
       text-align: center; color: #888; margin: 1em 0 1.5em;
     }
+
+    /* ---------- Блоки уроку ---------- */
     .task {
       border-left: 4px solid var(--theme-color); background: #fdf3f2;
       padding: .8em 1.2em; border-radius: 0 6px 6px 0; margin: 1.2em 0;
     }
-    .preview { max-width: 320px; display: block; margin: .5em 0 1em; border-radius: 8px; }
-    .lesson-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin: 1em 0; }
+    .preview { max-width: 300px; display: block; margin: .5em 0 1em; border-radius: 8px; }
+    .markdown-section table { display: table; }
+
+    /* ---------- Картки уроків на головній ---------- */
+    .lesson-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 1em 0 2em; }
     .lesson-cards a {
-      display: block; border: 1px solid #e5e5e5; border-radius: 10px; padding: 12px;
-      text-decoration: none !important; color: inherit; transition: box-shadow .15s;
+      position: relative; display: block; border: 2px solid #e5e5e5; border-radius: 10px; padding: 12px;
+      text-decoration: none !important; color: inherit; transition: box-shadow .15s, border-color .15s;
+      font-weight: 600 !important;
     }
     .lesson-cards a:hover { box-shadow: 0 3px 12px rgba(0,0,0,.12); }
-    .lesson-cards img { width: 100%; border-radius: 6px; margin-bottom: 6px; }
+    .lesson-cards img { width: 100%; aspect-ratio: 4/3; object-fit: contain; border-radius: 6px; margin-bottom: 6px; background: #f6f6f6; }
+    .lesson-cards .card-emoji { display: flex; align-items: center; justify-content: center; aspect-ratio: 4/3; font-size: 56px; background: #f6f6f6; border-radius: 6px; margin-bottom: 6px; }
     .lesson-cards b { color: var(--theme-color); }
+    .lesson-cards a.done { border-color: var(--done); }
+    .lesson-cards a.done::after {
+      content: '✓ Виконано'; position: absolute; top: 18px; right: 18px;
+      background: var(--done); color: #fff; font-size: 13px; padding: 2px 8px; border-radius: 12px;
+    }
+
+    /* ---------- Прогрес ---------- */
+    #progress { margin: 1em 0 1.5em; }
+    .progress-text { margin-bottom: 6px; font-weight: 600; }
+    .progress-bar { height: 14px; background: #eee; border-radius: 7px; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; background: var(--done); transition: width .4s; }
+    .progress-reset { font-size: 13px; color: #999 !important; cursor: pointer; margin-left: 10px; font-weight: 400; }
+
+    .done-box { margin: 2.5em 0 1em; padding: 1.2em; border: 2px dashed #ddd; border-radius: 10px; text-align: center; }
+    .done-btn {
+      font-size: 17px; padding: 12px 26px; border-radius: 8px; cursor: pointer;
+      border: 2px solid var(--done); background: #fff; color: var(--done); font-weight: 600;
+    }
+    .done-btn:hover { background: #eafaf1; }
+    .done-btn.is-done { background: var(--done); color: #fff; }
+    .done-hint { color: #999; font-size: 13px; margin-top: 8px; }
+
+    .sidebar-nav a.lesson-done::after { content: ' ✓'; color: var(--done); font-weight: 700; }
+    .markdown-section .task-list-item input { cursor: pointer; transform: scale(1.2); margin-right: 6px; }
   </style>
 </head>
 <body>
   <div id="app">Завантаження…</div>
   <script>
+    /* =====================================================================
+       Прогрес учня: зберігається в браузері (localStorage) на цьому пристрої.
+       Сторінка вважається уроком, якщо назва файлу починається з двох цифр
+       і дефіса: 01-block-1x1.md, 04-minifig-head.md тощо.
+       ===================================================================== */
+    var PROGRESS_KEY = 'freecad-progress-v1';
+
+    function loadProgress() {
+      try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; } catch (e) { return {}; }
+    }
+    function saveProgress(p) {
+      try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); } catch (e) {}
+    }
+    function lessonIdFromPath(path) {
+      var m = (path || '').replace(/\.md$/, '').match(/\/?(\d{2}-[^\/?#]+)$/);
+      return m ? m[1] : null;
+    }
+    function lessonIdFromHref(href) {
+      var m = (href || '').replace(/\.md$/, '').match(/#\/(\d{2}-[^\/?#]+)/);
+      return m ? m[1] : null;
+    }
+
+    function progressPlugin(hook, vm) {
+      hook.afterEach(function (html, next) {
+        if (lessonIdFromPath(vm.route.path)) {
+          html += '<div class="done-box">' +
+                    '<button class="done-btn"></button>' +
+                    '<div class="done-hint">Позначка зберігається в цьому браузері</div>' +
+                  '</div>';
+        }
+        next(html);
+      });
+
+      hook.doneEach(function () { refresh(vm); });
+    }
+
+    function refresh(vm) {
+      var p = loadProgress();
+      var id = lessonIdFromPath(vm.route.path);
+      var done = p.done || {};
+
+      // Кнопка «Виконано» на сторінці уроку
+      var btn = document.querySelector('.done-btn');
+      if (btn && id) {
+        var isDone = !!done[id];
+        btn.className = 'done-btn' + (isDone ? ' is-done' : '');
+        btn.textContent = isDone ? '✓ Виконано (натисніть, щоб скасувати)' : 'Позначити як виконане';
+        btn.onclick = function () {
+          var q = loadProgress(); q.done = q.done || {};
+          if (q.done[id]) delete q.done[id]; else q.done[id] = new Date().toISOString().slice(0, 10);
+          saveProgress(q); refresh(vm);
+        };
+      }
+
+      // Чек-лист «Самоперевірка»: можна ставити галочки, вони запам'ятовуються
+      if (id) {
+        var boxes = document.querySelectorAll('.markdown-section input[type=checkbox]');
+        var checks = (p.checks && p.checks[id]) || [];
+        boxes.forEach(function (box, i) {
+          box.disabled = false;
+          box.checked = !!checks[i];
+          box.onchange = function () {
+            var q = loadProgress(); q.checks = q.checks || {};
+            var arr = q.checks[id] || [];
+            arr[i] = box.checked; q.checks[id] = arr;
+            saveProgress(q);
+          };
+        });
+      }
+
+      // Галочки в меню зліва
+      document.querySelectorAll('.sidebar-nav a').forEach(function (a) {
+        var lid = lessonIdFromHref(a.getAttribute('href'));
+        a.classList.toggle('lesson-done', !!(lid && done[lid]));
+      });
+
+      // Картки та смужка прогресу на головній
+      var cards = document.querySelectorAll('.lesson-cards a');
+      var total = 0, count = 0;
+      cards.forEach(function (a) {
+        var lid = lessonIdFromHref(a.getAttribute('href'));
+        if (!lid) return;
+        total++;
+        if (done[lid]) { count++; a.classList.add('done'); } else { a.classList.remove('done'); }
+      });
+      var box = document.getElementById('progress');
+      if (box && total) {
+        var pct = Math.round(count / total * 100);
+        box.innerHTML =
+          '<div class="progress-text">Твій прогрес: ' + count + ' з ' + total + ' (' + pct + '%)' +
+          (count ? '<a class="progress-reset">скинути</a>' : '') + '</div>' +
+          '<div class="progress-bar"><div class="progress-fill"></div></div>';
+        setTimeout(function () { box.querySelector('.progress-fill').style.width = pct + '%'; }, 30);
+        var r = box.querySelector('.progress-reset');
+        if (r) r.onclick = function () {
+          if (confirm('Скинути всі позначки «Виконано»?')) { saveProgress({}); refresh(vm); }
+        };
+      }
+    }
+
     window.$docsify = {
       name: 'FreeCAD: уроки',
       homepage: 'home.md',
       loadSidebar: true,
-      subMaxLevel: 2,
+      subMaxLevel: 0,
       auto2top: true,
       relativePath: false,
       search: {
@@ -56,10 +196,11 @@
         depth: 3
       },
       pagination: {
-        previousText: 'Попередній урок',
-        nextText: 'Наступний урок',
+        previousText: 'Попередній',
+        nextText: 'Наступний',
         crossChapter: true
-      }
+      },
+      plugins: [progressPlugin]
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
