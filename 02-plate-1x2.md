@@ -4,7 +4,9 @@
 
 ## Відео
 
-<div class="video-placeholder">🎬 Відео скоро з'явиться</div>
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/LoHtNpbouKA" allowfullscreen></iframe>
+</div>
 
 ## Кроки
 
