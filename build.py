@@ -95,6 +95,9 @@ def enhance(h):
     h = add_heading_ids(h)
     # YouTube: ліниве завантаження + назва для доступності
     h = re.sub(r"<iframe (?![^>]*loading=)", '<iframe loading="lazy" title="Відеоурок" ', h)
+    # посилання «Відкрити на YouTube» під кожним відео (стане в пригоді й без вбудованого плеєра)
+    h = re.sub(r'(<div class="video">\s*<iframe[^>]*src="https://www\.youtube\.com/embed/([\w-]+)[^"]*"[^>]*></iframe>\s*</div>)',
+               r'\1\n<p class="video-link"><a href="https://youtu.be/\2" target="_blank" rel="noopener">▶ Відкрити відео на YouTube</a></p>', h)
     # картинки: ліниве завантаження (крім іконок)
     h = re.sub(r'<img (?![^>]*class="ic")(?![^>]*loading=)', '<img loading="lazy" ', h)
     return h
@@ -160,6 +163,7 @@ TEMPLATE = """<!DOCTYPE html>
     </article>
 {pager}
   </main>
+  <script src="search-index.js?v={ver}"></script>
   <script src="site.js?v={ver}"></script>
 </body>
 </html>
@@ -269,6 +273,7 @@ def main():
         print("✓", src, "->", page)
 
     write("search.json", json.dumps(search_index, ensure_ascii=False))
+    write("search-index.js", "window.SEARCH_INDEX = " + json.dumps(search_index, ensure_ascii=False) + ";\n")
     today = datetime.date.today().isoformat()
     write("sitemap.xml",
           '<?xml version="1.0" encoding="UTF-8"?>\n'

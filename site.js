@@ -123,6 +123,7 @@
 
   if (input) {
     input.addEventListener('input', function () {
+      if (!index && window.SEARCH_INDEX) index = window.SEARCH_INDEX;
       if (index) return doSearch();
       fetch('search.json').then(function (r) { return r.json(); })
         .then(function (data) { index = data; doSearch(); })
