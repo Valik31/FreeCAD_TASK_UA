@@ -44,4 +44,8 @@
     <img src="minifig-head.jpg" alt="Голова LEGO-чоловічка">
     <b>Етап 1</b><br>Голова
   </a>
+  <a href="05-minifig-torso.html">
+    <div class="card-emoji">👕</div>
+    <b>Етап 2</b><br>Тулуб
+  </a>
 </div>

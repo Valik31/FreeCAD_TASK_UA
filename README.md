@@ -93,5 +93,5 @@ python -m http.server 3000
 <img class="ic" src="icons/pad.svg" alt="">**Видавлювання**
 ```
 
-Є такі іконки: `body`, `new-sketch`, `leave-sketch`, `rect`, `rect-center`, `circle`, `external`, `construction`, `dimension`, `equal`, `symmetric`, `pad`, `pocket`, `fillet`, `linear-pattern`, `appearance`, `save`.
+Є такі іконки: `body`, `new-sketch`, `leave-sketch`, `rect`, `rect-center`, `circle`, `polyline`, `external`, `construction`, `horizontal`, `h-distance`, `v-distance`, `point-on-object`, `coincident`, `diameter`, `dimension`, `equal`, `symmetric`, `pad`, `pocket`, `fillet`, `thickness`, `mirrored`, `linear-pattern`, `appearance`, `save`.
 Іконки `external` і `construction` взято з FreeCAD 1.0, бо в новіших версіях вони змінилися. Інші іконки можна взяти з репозиторію FreeCAD: `src/Mod/PartDesign/Gui/Resources/icons`, `src/Mod/Sketcher/Gui/Resources/icons`.
