@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Проєкт LEGO-чоловічок. Етап 2: Тулуб — Уроки FreeCAD українською</title>
-  <meta name="description" content="Проєкт LEGO-чоловічок. Етап 2: Тулуб: відеоурок і покрокова інструкція FreeCAD українською. Навчимося малювати фігуру ламаною, повністю визначати ескіз обмеженнями (горизонтальність, точка на…">
+  <meta name="description" content="Проєкт LEGO-чоловічок. Етап 2: Тулуб: відеоурок і покрокова інструкція FreeCAD українською. Навчимося малювати фігуру ламаною, робити деталь порожнистою інструментом «Товщина» і вирізати отвори…">
   <link rel="canonical" href="https://valik31.github.io/FreeCAD_TASK_UA/05-minifig-torso.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -14,7 +14,7 @@
   <meta property="og:locale" content="uk_UA">
   <meta property="og:site_name" content="Уроки FreeCAD українською">
   <meta property="og:title" content="Проєкт LEGO-чоловічок. Етап 2: Тулуб — Уроки FreeCAD українською">
-  <meta property="og:description" content="Проєкт LEGO-чоловічок. Етап 2: Тулуб: відеоурок і покрокова інструкція FreeCAD українською. Навчимося малювати фігуру ламаною, повністю визначати ескіз обмеженнями (горизонтальність, точка на…">
+  <meta property="og:description" content="Проєкт LEGO-чоловічок. Етап 2: Тулуб: відеоурок і покрокова інструкція FreeCAD українською. Навчимося малювати фігуру ламаною, робити деталь порожнистою інструментом «Товщина» і вирізати отвори…">
   <meta property="og:url" content="https://valik31.github.io/FreeCAD_TASK_UA/05-minifig-torso.html">
   <meta property="og:image" content="https://valik31.github.io/FreeCAD_TASK_UA/block2x4-10.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap">
   <link rel="stylesheet" href="style.css?v=d3d36d5b">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Проєкт LEGO-чоловічок. Етап 2: Тулуб", "url": "https://valik31.github.io/FreeCAD_TASK_UA/05-minifig-torso.html", "inLanguage": "uk", "description": "Проєкт LEGO-чоловічок. Етап 2: Тулуб: відеоурок і покрокова інструкція FreeCAD українською. Навчимося малювати фігуру ламаною, повністю визначати ескіз обмеженнями (горизонтальність, точка на…", "educationalLevel": "Старша школа", "learningResourceType": "Відеоурок та інструкція", "isPartOf": {"@type": "WebSite", "name": "Уроки FreeCAD українською", "url": "https://valik31.github.io/FreeCAD_TASK_UA/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Проєкт LEGO-чоловічок. Етап 2: Тулуб", "url": "https://valik31.github.io/FreeCAD_TASK_UA/05-minifig-torso.html", "inLanguage": "uk", "description": "Проєкт LEGO-чоловічок. Етап 2: Тулуб: відеоурок і покрокова інструкція FreeCAD українською. Навчимося малювати фігуру ламаною, робити деталь порожнистою інструментом «Товщина» і вирізати отвори…", "educationalLevel": "Старша школа", "learningResourceType": "Відеоурок та інструкція", "isPartOf": {"@type": "WebSite", "name": "Уроки FreeCAD українською", "url": "https://valik31.github.io/FreeCAD_TASK_UA/"}}</script>
 </head>
 <body class="lesson" data-lesson="05-minifig-torso">
   <button class="menu-btn" aria-label="Меню">☰</button>
@@ -56,83 +56,32 @@
     <article class="markdown-section">
 <h1>Проєкт LEGO-чоловічок. Етап 2: Тулуб</h1>
 <p>Продовжуємо проєкт: після голови моделюємо тулуб LEGO-чоловічка.</p>
-<p><strong>Що навчимося:</strong> малювати фігуру ламаною, повністю визначати ескіз обмеженнями (горизонтальність, точка на об'єкті, симетрія, відстані), робити деталь порожнистою інструментом «Товщина», вирізати отвір «До першої грані» й віддзеркалювати його.</p>
+<p><strong>Що навчимося:</strong> малювати фігуру ламаною, робити деталь порожнистою інструментом «Товщина» і вирізати отвори одразу з двох боків.</p>
 <h2 id="відео">Відео</h2>
 <div class="video-placeholder">🎬 Відео скоро з'явиться</div>
 <h2 id="кроки">Кроки</h2>
-<h3 id="1-ескіз-тулуба">1. Ескіз тулуба</h3>
+<h3 id="1-тулуб">1. Тулуб</h3>
 <ol>
-<li>
-<p>Відкрийте FreeCAD і під час створення нового файлу виберіть <img class="ic" src="icons/body.svg" alt=""><strong>Параметричне тіло</strong> (Parametric Body).</p>
-</li>
-<li>
-<p>Натисніть <img class="ic" src="icons/new-sketch.svg" alt=""><strong>Новий ескіз</strong> і виберіть площину <strong>XZ</strong>.</p>
-</li>
-<li>
-<p>Інструментом <img class="ic" src="icons/polyline.svg" alt=""><strong>Ламана</strong> (Polyline) намалюйте замкнену фігуру з чотирьох відрізків, схожу на трапецію: знизу ширша, зверху вужча. Останню точку з'єднайте з першою.</p>
-</li>
-<li>
-<p>Виділіть верхню сторону й застосуйте обмеження <img class="ic" src="icons/horizontal.svg" alt=""><strong>горизонтальності</strong>. Так само зробіть з нижньою стороною (якщо FreeCAD не поставив його сам).</p>
-</li>
-<li>
-<p>Затисніть <strong>Ctrl</strong>, виділіть <strong>нижній лівий кут</strong> трапеції та <strong>червону вісь X</strong> і застосуйте <img class="ic" src="icons/point-on-object.svg" alt=""><strong>Точку на об'єкті</strong>. Оскільки нижня сторона горизонтальна, увесь низ тулуба ляже на вісь X.</p>
-</li>
-<li>
-<p>Затисніть <strong>Ctrl</strong>, виділіть два нижні кути трапеції та <strong>зелену вісь</strong> і застосуйте <img class="ic" src="icons/symmetric.svg" alt=""><strong>симетрію</strong>. Те саме зробіть для двох верхніх кутів.</p>
-</li>
-<li>
-<p>Інструментом <img class="ic" src="icons/h-distance.svg" alt=""><strong>Горизонтальна відстань</strong> задайте довжину нижньої сторони <strong>15,44 мм</strong>, а верхньої <strong>11,36 мм</strong>.</p>
-</li>
-<li>
-<p>Інструментом <img class="ic" src="icons/v-distance.svg" alt=""><strong>Вертикальна відстань</strong> задайте висоту трапеції <strong>12,72 мм</strong>.</p>
-<blockquote>
-<p>💡 <strong>Перевірка:</strong> ліворуч у «Повідомленнях розв'язувача» має з'явитися напис <strong>«Повністю визначений ескіз»</strong> (Fully constrained sketch), а лінії стануть зеленими. Якщо ні, якогось обмеження бракує.</p>
-</blockquote>
-</li>
-<li>
-<p>Вийдіть з ескізу кнопкою <img class="ic" src="icons/leave-sketch.svg" alt=""><strong>Leave Sketch</strong>.</p>
-</li>
+<li>Відкрийте FreeCAD, виберіть <img class="ic" src="icons/body.svg" alt=""><strong>Параметричне тіло</strong>, потім <img class="ic" src="icons/new-sketch.svg" alt=""><strong>Новий ескіз</strong> і площину <strong>XZ</strong>.</li>
+<li>Інструментом <img class="ic" src="icons/polyline.svg" alt=""><strong>Ламана</strong> намалюйте трапецію: почніть <strong>на червоній осі X</strong>, низ і верх малюйте рівно горизонтально, останню точку з'єднайте з першою.</li>
+<li>Затисніть <strong>Ctrl</strong>, виділіть два нижні кути та <strong>зелену вісь</strong> і застосуйте <img class="ic" src="icons/symmetric.svg" alt=""><strong>симетрію</strong>. Так само зробіть для двох верхніх кутів.</li>
+<li>Задайте розміри: низ <img class="ic" src="icons/h-distance.svg" alt=""><strong>15,44 мм</strong>, верх <img class="ic" src="icons/h-distance.svg" alt=""><strong>11,36 мм</strong>, висота <img class="ic" src="icons/v-distance.svg" alt=""><strong>12,72 мм</strong>. Ескіз має стати зеленим. Вийдіть з ескізу.</li>
+<li><img class="ic" src="icons/pad.svg" alt=""><strong>Видавлювання</strong> на <strong>7,85 мм</strong> з галочкою <strong>«Симетрично до площини»</strong>.</li>
+<li>Поверніть модель низом до себе, виділіть <strong>нижню грань</strong> і застосуйте <img class="ic" src="icons/thickness.svg" alt=""><strong>Товщину</strong> <strong>1,5 мм</strong> з галочкою <strong>«Зробити товщину всередину»</strong>. Тулуб стане порожнистим.</li>
 </ol>
-<h3 id="2-обємний-тулуб">2. Об'ємний тулуб</h3>
-<ol start="10">
-<li>Виберіть <img class="ic" src="icons/pad.svg" alt=""><strong>Видавлювання</strong> (Pad), задайте довжину <strong>7,85 мм</strong> і поставте галочку <strong>«Симетрично до площини»</strong>. Натисніть <strong>ОК</strong>.</li>
-<li>Поверніть модель так, щоб бачити низ, і виділіть <strong>нижню грань</strong> тулуба.</li>
-<li>Виберіть інструмент <img class="ic" src="icons/thickness.svg" alt=""><strong>Товщина</strong> (Thickness). Задайте товщину <strong>1,5 мм</strong>, тип з'єднання <strong>«Перетин»</strong> (Intersection) і поставте галочку <strong>«Зробити товщину всередину»</strong>. Натисніть <strong>ОК</strong>. Тепер тулуб порожнистий і відкритий знизу.</li>
+<h3 id="2-шия">2. Шия</h3>
+<ol start="7">
+<li>На <strong>верхній грані</strong> створіть ескіз з <img class="ic" src="icons/circle.svg" alt=""><strong>колом</strong> у точці початку координат, діаметр <strong>4,8 мм</strong>.</li>
+<li><img class="ic" src="icons/pad.svg" alt=""><strong>Видавлювання</strong> на <strong>5,7 мм</strong>.</li>
 </ol>
-<h3 id="3-шия">3. Шия</h3>
-<ol start="13">
-<li>Виділіть <strong>верхню грань</strong> тулуба й натисніть <img class="ic" src="icons/new-sketch.svg" alt=""><strong>Новий ескіз</strong>.</li>
-<li>Намалюйте <img class="ic" src="icons/circle.svg" alt=""><strong>Коло</strong> з центром у <strong>точці початку координат</strong> і задайте <img class="ic" src="icons/diameter.svg" alt=""><strong>діаметр 4,8 мм</strong>. Вийдіть з ескізу.</li>
-<li>Виберіть <img class="ic" src="icons/pad.svg" alt=""><strong>Видавлювання</strong> і задайте довжину <strong>5,7 мм</strong>. Натисніть <strong>ОК</strong>.</li>
+<h3 id="3-отвори-для-рук">3. Отвори для рук</h3>
+<ol start="9">
+<li>Створіть <img class="ic" src="icons/new-sketch.svg" alt=""><strong>Новий ескіз</strong> на площині <strong>YZ</strong>. Намалюйте <img class="ic" src="icons/circle.svg" alt=""><strong>коло</strong> з центром <strong>на зеленій осі</strong>, діаметр <strong>4 мм</strong>, висота центра над віссю X <strong>7,23 мм</strong>.</li>
+<li><img class="ic" src="icons/pocket.svg" alt=""><strong>Виріз</strong>: тип <strong>«Через усе»</strong> і галочка <strong>«Симетрично до площини»</strong>. Отвори з'являться одразу з обох боків.</li>
 </ol>
-<h3 id="4-отвори-для-рук">4. Отвори для рук</h3>
-<ol start="16">
-<li>
-<p>Натисніть <img class="ic" src="icons/new-sketch.svg" alt=""><strong>Новий ескіз</strong> і виберіть площину <strong>YZ</strong>.</p>
-<blockquote>
-<p>⚠️ <strong>Увага:</strong> не створюйте цей ескіз на похилій боковій грані тулуба. Ескіз на похилій грані розвертається під кутом, і отвір вийде кривим.</p>
-</blockquote>
-</li>
-<li>
-<p>Намалюйте <img class="ic" src="icons/circle.svg" alt=""><strong>Коло</strong> і задайте <img class="ic" src="icons/diameter.svg" alt=""><strong>діаметр 4 мм</strong>.</p>
-</li>
-<li>
-<p>Затисніть <strong>Ctrl</strong>, виділіть центр кола та <strong>вертикальну вісь</strong> і застосуйте <img class="ic" src="icons/point-on-object.svg" alt=""><strong>Точку на об'єкті</strong>.</p>
-</li>
-<li>
-<p>Інструментом <img class="ic" src="icons/v-distance.svg" alt=""><strong>Вертикальна відстань</strong> задайте відстань від осі X до центра кола <strong>7,23 мм</strong>. Вийдіть з ескізу.</p>
-</li>
-<li>
-<p>Виберіть <img class="ic" src="icons/pocket.svg" alt=""><strong>Виріз</strong> (Pocket), тип <strong>«До першої грані»</strong> (Up to first). Натисніть <strong>ОК</strong>. З'явиться отвір в одному боці тулуба.</p>
-</li>
-<li>
-<p>Виділіть у дереві <strong>Pocket</strong> і виберіть <img class="ic" src="icons/mirrored.svg" alt=""><strong>Дзеркальне відображення</strong> (Mirrored). Площина: <strong>«Вертикальна вісь ескізу»</strong>. Натисніть <strong>ОК</strong>. Отвір з'явиться і з другого боку.</p>
-</li>
-</ol>
-<h3 id="5-заокруглення">5. Заокруглення</h3>
-<ol start="22">
-<li>Затисніть <strong>Ctrl</strong> і виділіть <strong>чотири ребра навколо верхньої грані</strong> тулуба (плечі).</li>
-<li>Виберіть <img class="ic" src="icons/fillet.svg" alt=""><strong>Заокруглення</strong> (Fillet) і задайте радіус <strong>0,75 мм</strong>. Натисніть <strong>ОК</strong>.</li>
+<h3 id="4-заокруглення-і-здача">4. Заокруглення і здача</h3>
+<ol start="11">
+<li>Виділіть <strong>4 ребра навколо верхньої грані</strong> (плечі) і застосуйте <img class="ic" src="icons/fillet.svg" alt=""><strong>Заокруглення</strong> <strong>0,75 мм</strong>.</li>
 <li>Збережіть файл: <img class="ic" src="icons/save.svg" alt=""><strong>Файл → Зберегти як…</strong></li>
 <li>📤 Надішліть файл з роботою в <strong>Google Classroom</strong>.</li>
 </ol>
