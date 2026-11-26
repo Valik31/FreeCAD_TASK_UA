@@ -45,7 +45,7 @@
     <b>Етап 1</b><br>Голова
   </a>
   <a href="05-minifig-torso.html">
-    <div class="card-emoji">👕</div>
+    <img src="minifig-torso.jpg" alt="Тулуб LEGO-чоловічка">
     <b>Етап 2</b><br>Тулуб
   </a>
 </div>
